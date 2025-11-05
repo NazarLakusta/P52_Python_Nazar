@@ -30,7 +30,7 @@ main_part()
 
 
 def area(side):
-    return sid e *side
+    return side *side
 
 
 square_1 = area(5)
