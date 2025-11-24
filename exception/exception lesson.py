@@ -32,3 +32,28 @@ except Exception as e:
 
 
 
+
+try:
+    num = int(input("Введи число: "))
+    print(10 / 0)
+except (ValueError, ZeroDivisionError):
+    print("Ну дивись, або на 0 ділиш або це не число")
+
+
+
+print("2 excpet")
+# 2 except
+try:
+    num = int(input("Введи число: "))
+    print(10 / 0)
+
+except (ValueError):
+    print("це не число")
+
+except (ZeroDivisionError):
+    print("ти на 0 ділиш, це як")
+
+
+
+
+
