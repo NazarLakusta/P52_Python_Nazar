@@ -29,6 +29,10 @@ else:
 
 try:
     password = input("Введи пароль: ")
+
+
+
+
     if len(password) < 6:
         raise PasswordTooShortError("Пароль має бути не менше 6")
 
