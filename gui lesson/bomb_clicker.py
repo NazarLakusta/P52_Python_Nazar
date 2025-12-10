@@ -4,7 +4,24 @@ score = 0
 press_return = True
 
 def update_display():
-    pass
+    global bomb
+    global score
+
+    if bomb >= 80:
+        bomb_label.config(image=img_1)
+
+    elif 50 <= bomb < 80:
+        bomb_label.config(image=img_2)
+
+    elif 0 < bomb < 50:
+        bomb_label.config(image=img_3)
+    else:
+        bomb_label.config(image=img_4)
+
+    fuse_label.config(text=f"Fuse: {str(bomb)}")
+    score_label.config(text=f"Score: {str(score)}")
+    fuse_label.after(100,update_display)
+
 
 def is_alive():
     global bomb
@@ -32,7 +49,18 @@ def update_score():
 
 
 def start(event):
-    pass
+    global press_return
+    if not press_return:
+        pass
+
+    else:
+        update_bomb()
+        update_score()
+        update_display()
+        label.config(text="")
+        press_return = False
+
+
 
 def click():
     global bomb
