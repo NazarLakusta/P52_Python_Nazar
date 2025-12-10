@@ -32,4 +32,22 @@ test_patter = re.compile(r"\w\w\d")
 # {n,} мінімум n a{2,} -> aa, aaaa,aaaaaaa
 # {n,m} від n до m   a{2,4} -> aa, aaa, aaaa
 
+# шаблон для номеру телефона +380
+test_2_pattern = re.compile(r"^\+380\d{9}$")
 
+# (?=.*\d)   (?=.*[A-Z])  (?=.*[a-z]) (?=.*[!@#%^&*?]))
+
+# password check
+test_2_pattern = re.compile(r"^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#%^&*?]).{6,20}$")
+
+
+# login check
+test_2_pattern = re.compile(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$]")
+
+test_text = input("Введи текст для перевірки: ")
+
+if test_2_pattern.search(test_text):
+    print("Да перевірку пройшов.")
+
+else:
+    print("Вибач дозвіл заборонено.")
