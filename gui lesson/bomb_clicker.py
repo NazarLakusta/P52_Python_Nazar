@@ -3,6 +3,43 @@ bomb = 100 # timer
 score = 0
 press_return = True
 
+def update_display():
+    pass
+
+def is_alive():
+    global bomb
+    global press_return
+
+    if bomb <= 0:
+        bomb = 0
+        label.config(text="Bang! Bang! Bang!")
+        press_return = True
+        return False
+    else:
+        return True
+
+def update_bomb():
+    global bomb
+    bomb -= 5
+    if is_alive():
+       fuse_label.after(400,update_bomb)
+
+def update_score():
+    global score
+    if is_alive():
+        score += 1
+        score_label.after(3000,update_score)
+
+
+def start(event):
+    pass
+
+def click():
+    global bomb
+
+    if is_alive():
+        bomb += 1
+
 
 
 
