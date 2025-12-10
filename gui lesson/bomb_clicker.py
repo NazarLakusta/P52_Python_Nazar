@@ -25,4 +25,24 @@ score_label = tk.Label(root, text = f"Score: {str(score)}",
                       font=("Comic Sans MS",14))
 score_label.pack()
 
+img_1 = tk.PhotoImage(file="img/1.gif")
+img_2 = tk.PhotoImage(file="img/2.gif")
+img_3 = tk.PhotoImage(file="img/3.gif")
+img_4 = tk.PhotoImage(file="img/4.gif")
+
+bomb_label = tk.Label(image=img_1)
+bomb_label.pack()
+
+click_button = tk.Button(root,text = "Click me",
+                         bg="black",
+                         fg="white",
+                         width=15,
+                         font=("Comic Sans MS",14),
+                         command=click)
+click_button.pack()
+
+root.bind("<Return>",start)
+
+
+
 root.mainloop()
