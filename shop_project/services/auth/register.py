@@ -16,3 +16,7 @@ while True:
 
 
 cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)",(username, password))
+
+conn.commit()
+conn.close()
+print("Реєстрація успішна")
